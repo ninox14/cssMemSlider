@@ -184,7 +184,8 @@ p {
   padding: 0.5em;
   display: inline-block;
   cursor: pointer;
-
+  position: relative;
+  z-index: 3;
 }
 .slider__bullets label:hover .slider__bullet {
   background: #ffffff;
