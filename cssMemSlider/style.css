@@ -3,8 +3,13 @@ body {
   font-family: 'Work Sans', sans-serif;
   font-size: 1em;
   color: #cccccc;
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgb(0, 11, 36) 0%, rgba(21,86,163,1) 60%, rgba(2,146,175,1) 100%);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgb(0, 11, 36) 0%,
+    rgba(21, 86, 163, 1) 60%,
+    rgba(2, 146, 175, 1) 100%
+  );
   -webkit-font-smoothing: antialiased;
 }
 *,
@@ -13,13 +18,11 @@ body {
   box-sizing: border-box;
 }
 
-
 p {
   margin: 0;
 }
 
 .container {
-
   max-width: calc(100vw - 30%);
   padding: 2% 6%;
   height: 100%;
@@ -30,14 +33,12 @@ p {
 
   display: flex;
   flex-flow: wrap;
-
 }
 
 .slider__nav {
   display: none;
 }
 .slider__container {
-
   padding-top: 1%;
 
   position: relative;
@@ -50,14 +51,14 @@ p {
   overflow: hidden;
 }
 .slider__items {
-  transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+  transition: margin-left 800ms cubic-bezier(0.77, 0, 0.175, 1);
   width: 400%;
   display: flex;
   align-items: center;
 }
 .slider__slide {
   width: 25%;
-  float:left;
+  float: left;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,16 +77,12 @@ p {
   margin-left: -300%;
 }
 
-
 .slider__image {
   width: 100%;
   height: auto;
   border-radius: 0.5em;
   display: block;
 }
-
-
-
 
 /* Slider controls */
 
@@ -98,19 +95,20 @@ p {
   display: none;
   width: 3em;
   height: 3em;
-  opacity: .7;
+  opacity: 0.7;
 }
 .slider__controls label:hover {
   opacity: 1;
 }
 
-
 #slide1:checked ~ .slider__controls label:nth-child(2),
 #slide2:checked ~ .slider__controls label:nth-child(3),
 #slide3:checked ~ .slider__controls label:nth-child(4),
 #slide4:checked ~ .slider__controls label:nth-child(1) {
-  background: url(https://image.flaticon.com/icons/svg/130/130884.svg) no-repeat;
-  float:right;
+  background: url(./keks/arrow-left.svg) no-repeat;
+  transform: rotate(180deg);
+  background-size: cover;
+  float: right;
   margin-right: -3em;
   display: block;
   cursor: pointer;
@@ -119,13 +117,14 @@ p {
 #slide3:checked ~ .slider__controls label:nth-last-child(3),
 #slide4:checked ~ .slider__controls label:nth-last-child(2),
 #slide1:checked ~ .slider__controls label:nth-last-child(1) {
-  background: url(https://image.flaticon.com/icons/svg/130/130882.svg) no-repeat;
-  float:left;
+  background: url(./keks/arrow-left.svg) no-repeat;
+  background-size: cover;
+  float: left;
   margin-left: -3em;
   display: block;
   cursor: pointer;
 }
-.slider__panel  {
+.slider__panel {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -134,7 +133,6 @@ p {
   padding: 0 2em;
   padding-top: 1em;
 }
-
 
 /* Text slides */
 
@@ -154,7 +152,6 @@ p {
 .slider__txt_container .slider__slide {
   justify-content: start;
 }
-
 
 /* Slider bullets */
 
@@ -181,30 +178,59 @@ p {
 
   text-align: center;
 
-  border-radius:50%;
+  border-radius: 50%;
   margin: 0 auto;
-
 
   background: #c4c3c3;
   opacity: 0.7;
-  transition: opacity .2s ease-in-out,
-              background .2s ease-in-out;
+  transition: opacity 0.2s ease-in-out, background 0.2s ease-in-out;
 }
-#slide1:checked ~ .slider__panel .slider__bullets label:nth-child(1) .slider__bullet,
-#slide2:checked ~ .slider__panel .slider__bullets label:nth-child(2) .slider__bullet,
-#slide3:checked ~ .slider__panel .slider__bullets label:nth-child(3) .slider__bullet,
-#slide4:checked ~ .slider__panel .slider__bullets label:nth-child(4) .slider__bullet{
+#slide1:checked
+  ~ .slider__panel
+  .slider__bullets
+  label:nth-child(1)
+  .slider__bullet,
+#slide2:checked
+  ~ .slider__panel
+  .slider__bullets
+  label:nth-child(2)
+  .slider__bullet,
+#slide3:checked
+  ~ .slider__panel
+  .slider__bullets
+  label:nth-child(3)
+  .slider__bullet,
+#slide4:checked
+  ~ .slider__panel
+  .slider__bullets
+  label:nth-child(4)
+  .slider__bullet {
   background: #000;
   opacity: 0.9;
 }
-#slide1:checked ~ .slider__panel .slider__bullets label:nth-child(1):hover .slider__bullet,
-#slide2:checked ~ .slider__panel .slider__bullets label:nth-child(2):hover .slider__bullet,
-#slide3:checked ~ .slider__panel .slider__bullets label:nth-child(3):hover .slider__bullet,
-#slide4:checked ~ .slider__panel .slider__bullets label:nth-child(4):hover .slider__bullet {
+#slide1:checked
+  ~ .slider__panel
+  .slider__bullets
+  label:nth-child(1):hover
+  .slider__bullet,
+#slide2:checked
+  ~ .slider__panel
+  .slider__bullets
+  label:nth-child(2):hover
+  .slider__bullet,
+#slide3:checked
+  ~ .slider__panel
+  .slider__bullets
+  label:nth-child(3):hover
+  .slider__bullet,
+#slide4:checked
+  ~ .slider__panel
+  .slider__bullets
+  label:nth-child(4):hover
+  .slider__bullet {
   background: #303030;
   opacity: 1;
 }
-
 
 @media (max-width: 1250px) {
   .slider__panel {
@@ -212,7 +238,7 @@ p {
     padding-bottom: 1em;
   }
   .slider__txt_container .slider__slide {
-    justify-content: center;
+    justify-content: start;
   }
 }
 @media (max-width: 1024px) {
